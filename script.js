@@ -114,15 +114,9 @@ function isGameOver() {
     if(column == 0 && line === 0) {
         return false;
     }
-    if (posHeadColumn < 0) {
+    if (posHeadColumn < 0 || posHeadColumn == squareMax || posHeadLine < 0 || posHeadLine == squareMax) {
         gameOver = true;
-    } else if (posHeadColumn == squareMax) {
-        gameOver = true;
-    } else if (posHeadLine < 0) {
-        gameOver = true;
-    } else if (posHeadLine == squareMax) {
-        gameOver = true;
-    }
+    } 
     for (let i = 0; i < snakePiece.length; ++i) {
         let pice = snakePiece[i];
         if (pice.x == posHeadColumn && pice.y == posHeadLine) {
